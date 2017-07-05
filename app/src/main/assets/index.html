@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML5 Js 接口测试</title>
+    <script type="text/javascript" src="People.js"></script>
+    <script type="text/javascript">
+    function deviceId(obj) {
+		document.getElementById("Android").innerHTML = obj;
+	}
+        function onCCEvent() {
+		var eventArray = new Array();
+		eventArray[0] = "arr1";
+		eventArray[1] = "arr2";
+		eventArray[2] = "arr3"
+		PeopleAgent.onCCEvent(eventArray, 1, "eventlabel");
+	}
+	function onCCEvent(obj) {
+		PeopleAgent.onEvent(obj);
+	}
+
+
+    </script>
+    <style type="text/css">
+   input {
+       width: 100%;
+       height: 60px;
+   }
+
+
+    </style>
+</head>
+
+<body>
+
+<br/>
+<input type="button" value="加载天气" style='font-size:30px'
+       onclick="PeopleAgent.getAndroid(deviceId)"/>
+<br/>
+<br/>
+<input type="button" style='font-size:30px' value="onCCEvent" onclick="onCCEvent()"/>
+<br/>
+<br/>
+<input type="button" value="onEvent" style='font-size:30px'
+       onclick="PeopleAgent.onEvent('Event0')"/>
+<br/>
+<br/>
+<input type="button" value="next Html " style="font-size:30px" onclick="onCCEvent(0)"/>
+<p id="Android"></p>
+</body>
+
+
+</html>
