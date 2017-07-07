@@ -87,7 +87,7 @@ var PeopleAgent = {
      * 自定义事件数量统计
      * 
      * @param eventId
-     *            String类型.事件ID， 注意需要先在友盟网站注册此ID
+     *            String类型.事件ID，
      * @param eventData
      *            Map<String,String>类型.当前事件的属性集合，最多支持10个K-V值
      */
@@ -102,7 +102,7 @@ var PeopleAgent = {
      * @param eventId
      *            String类型.事件ID，
      * @param eventData
-     *            Map<String,String>类型.事件的属性集合，最多支持10个K-V值
+     *            Map<String,String>类型.事件的属性集合
      * @param eventNum
      *            int 类型.事件持续时长，单位毫秒，您需要手动计算并传入时长，作为事件的时长参数
      * 
@@ -145,20 +145,7 @@ var PeopleAgent = {
             data2Json("profileSignInWithPUID", [ UID ]);
         }
     },
-    /**
-     * 统计帐号登录接口 *
-     * 
-     * @param provider
-     *            帐号来源.用户通过第三方账号登陆,可以调用此接口进行统计.不能以下划线"_"开头,使用大写字母和数字标识,长度小于32字节;
-     *            如果是上市公司,建议使用股票代码.
-     * @param UID
-     *            用户账号ID,长度小于64字节
-     */
-    profileSignInWithPUIDWithProvider : function(provider, UID) {
-        if (isWebviewFlag) {
-            data2Json("profileSignInWithPUIDWithProvider", [ provider, UID ]);
-        }
-    },
+
     /**
      * 帐号统计退出接口
      */
